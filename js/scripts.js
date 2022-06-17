@@ -1,8 +1,17 @@
 // Business Logic
-function Pizza(mushroom, garlic, artichoke, large, medium) {
+function Pizza(mushroom, garlic, artichoke)  {
   this.mushroom = mushroom;
   this.garlic = garlic;
   this.artichoke = artichoke;
+  
+}
+
+function Order(toppings, sizes) {
+  this.toppings = toppings;
+  this.sizes = sizes;
+}
+
+function Sizes(large, medium) {
   this.large = large;
   this.medium = medium;
 }

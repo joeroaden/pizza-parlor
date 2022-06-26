@@ -1,26 +1,13 @@
 // Business Logic
-function Pizza(mushroom, garlic, artichoke)  {
-  this.mushroom = mushroom;
-  this.garlic = garlic;
-  this.artichoke = artichoke;
+function Pizza(toppings, size, price)  {
+  this.toppings = toppings;
+  this.size = size;
+  this.price = price;
   
 }
 
-function Order(toppings, sizes) {
-  this.toppings = toppings;
-  this.sizes = sizes;
-}
-
-function Sizes(large, medium) {
-  this.large = large;
-  this.medium = medium;
-}
-
-let pizzaOne = new Pizza();
-
 Sizes.prototype.calculatePizzaPrice = function () {
   let basePrice = 10;
-  let output = [basePrice];
   if (this.large) {
     output[0] +5;
     return output;
@@ -33,8 +20,8 @@ console.log(output)
 $(document).ready(function () {
   $("#buy-button").submit(function (event) {
     event.preventDefault();
-    pizzaOne.calculatePizzaPrice();
-    //const topping = $("#topping").val();
+    //pizzaOne.calculatePizzaPrice();
+    const topping = $("#topping").val();
     const size = $("#size").val();
     let finalPizza = calculatePizzaPrice(size);
     $("#pizza-price-msg").text(pizzaOne.large);

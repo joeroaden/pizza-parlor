@@ -74,6 +74,14 @@ _Tests_
 
 Describe: Pizza()
 
+Describe: Pizza()
+
 Test: "It should return a Pizza object with two properties for toppings and size"
-Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
+Code: const pizza = new Pizza(["anchovies", "pineapple"], "medium");
 Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium" }
+
+
+Test: "It should return a price of 25 for medium and 30 for large"
+Code: const pizza = new Pizza
+      pizza.calculatePizzaPrice
+Expected Output: Medium 25 and Large 30

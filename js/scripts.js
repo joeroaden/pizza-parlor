@@ -1,30 +1,33 @@
 // Business Logic
-function Pizza(toppings, size, price)  {
+function Pizza(toppings, size, price) {
   this.toppings = toppings;
   this.size = size;
   this.price = price;
-  
 }
-
-Sizes.prototype.calculatePizzaPrice = function () {
-  let basePrice = 10;
-  if (this.large) {
-    output[0] +5;
-    return output;
-  }
-
+Pizza.prototype.chooseSize = function (size) {
+  this.size = size;
 };
-console.log(output)
+
+Pizza.prototype.calculatePizzaPrice = function () {
+  let basePrice = 20;
+  if (this.size === "Medium") {
+    basePrice += 5;
+  } else if (this.size === "Large") {
+    basePrice += 10;
+  }
+  let price = 0 + basePrice;
+  this.price = price;
+  return price;
+};
 
 // UI Logic
 $(document).ready(function () {
-  $("#buy-button").submit(function (event) {
+  let pizza = new Pizza ();
+  $("#buy-button").click(function (event) {
     event.preventDefault();
-    //pizzaOne.calculatePizzaPrice();
-    const topping = $("#topping").val();
-    const size = $("#size").val();
-    let finalPizza = calculatePizzaPrice(size);
-    $("#pizza-price-msg").text(pizzaOne.large);
-    //return new Pizza(mushroom, garlic, artichoke, large, medium);
+    let size = $("input:radio[name=size]:checked").val();
+    pizza.chooseSize(size);
+    $("#pizza-price").text(pizza.calculatePizzaPrice());
+    $("#pizza-price-msg").show();
   });
 });

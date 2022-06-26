@@ -4,6 +4,9 @@ function Pizza(toppings, size, price) {
   this.size = size;
   this.price = price;
 }
+Pizza.prototype.chooseToppings = function (){
+  this.toppings = toppings;
+}
 Pizza.prototype.chooseSize = function (size) {
   this.size = size;
 };
@@ -25,8 +28,11 @@ $(document).ready(function () {
   let pizza = new Pizza ();
   $("#buy-button").click(function (event) {
     event.preventDefault();
+    let toppings = $("#topping").val();
+    //pizza.chooseToppings(toppings);
     let size = $("input:radio[name=size]:checked").val();
     pizza.chooseSize(size);
+    $("#your-pizza").text(toppings);
     $("#pizza-price").text(pizza.calculatePizzaPrice());
     $("#pizza-price-msg").show();
   });

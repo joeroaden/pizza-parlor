@@ -17,12 +17,13 @@
         <img src="img/pizza.jpg" alt="image of Pizza" height = "300" width = "400" >
        </div>
         <h3>Build Your Pizza</h3>
-        <label>Choose a Topping</label>
-            <select id="topping">
+        <h4>Choose a Topping</h4>
+            <select class = "form-control" id="topping">
               <option value="mushroom">Mushroom</option>
               <option value="roasted-garlic">Roasted Garlic</option>
               <option value="artichoke">Artichoke</option>
-            </select>    
+            </select> 
+            <br>   
         <label>Choose a Size</label>
             <div id="size">
               <div class = "radio"></div>
@@ -39,6 +40,7 @@
             <button id="buy-button" class="btn btn-secondary" type="submit">Buy Now!</button>
           </div>
           <div class="price">
+            <h4>Your Pizza: <span id = "your-pizza"></span></h4>
             <h4>Your total is: <span id="pizza-price"></span></h4>
             <p id="pizza-price-msg"></p>
       </div>
